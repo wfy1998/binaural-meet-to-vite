@@ -24,7 +24,12 @@
     "downlevelIteration": true,
     "jsx": "react-jsx",
     "baseUrl": "src",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {           // ・・・・追加
+      "@/*": [           // ・・・・追加
+        "./*"            // ・・・・追加
+      ]                  // ・・・・追加
+    }                    // ・・・・追加
   },
   "include": [
     "src",
