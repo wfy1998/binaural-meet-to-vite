@@ -1,4 +1,4 @@
-import {App} from '@components/App'
+import {App} from '@/components/App'
 import '@models/audio'  // init audio manager (DO NOT delete)
 import {i18nInit} from '@models/locales'
 import {urlParameters} from '@models/url'

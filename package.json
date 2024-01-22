@@ -54,7 +54,7 @@
     "react-rnd": "https://github.com/hasevr/react-rnd.git",
     "react-split-pane": "^0.1.92",
     "react-use-gesture": "^7.0.15",
-    "sass": "^1.26.11",
+    "sass": "^1.70.0",
     "sass-loader": "^10.0.2",
     "tern": "^0.24.3",
     "three": "^0.142.0",
