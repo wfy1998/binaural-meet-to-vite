@@ -1,10 +1,10 @@
-import {Stores} from '@components/utils'
+import {Stores} from '@/components/utils'
 import Button from '@material-ui/core/Button'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Grid from '@material-ui/core/Grid'
 import Slider from '@material-ui/core/Slider'
-import {conference} from '@models/conference'
-import {t} from '@models/locales'
+import {conference} from '@/models/conference'
+import {t} from '@/models/locales'
 import {useObserver} from 'mobx-react-lite'
 import React from 'react'
 

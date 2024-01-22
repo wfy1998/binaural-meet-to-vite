@@ -1,4 +1,4 @@
-import { ISharedContent } from '@models/ISharedContent'
+import { ISharedContent } from '@/models/ISharedContent'
 import {MapObject} from './MapObject'
 import {findReverseColorRGB, findTextColorRGB, getRandomColorRGB, rgb2Color} from './utils/color'
 import {Mouse} from './utils/coordinates'

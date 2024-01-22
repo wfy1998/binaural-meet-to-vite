@@ -1,9 +1,9 @@
 import {loadFaceLandmarkTinyModel, loadTinyFaceDetectorModel, detectSingleFace,
   TinyFaceDetectorOptions, Point, WithFaceLandmarks, FaceLandmarks68, FaceDetection} from 'face-api.js'
-import {rgba} from '@models/utils/color'
-import participants from '@stores/participants/Participants'
-import {addV2, mulV2, rotateVector2DByDegree, subV2} from '@models/utils'
-import {MSTrack} from '@models/conference/RtcConnection'
+import {rgba} from '@/models/utils/color'
+import participants from '@/stores/participants/Participants'
+import {addV2, mulV2, rotateVector2DByDegree, subV2} from '@/models/utils'
+import {MSTrack} from '@/models/conference/RtcConnection'
 
 // config.js
 declare const config:any                  //  from ../../config.js included from index.html

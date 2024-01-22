@@ -1,6 +1,6 @@
-import { conference } from '@models/conference'
-import {assert} from '@models/utils'
-import errorInfo from '@stores/ErrorInfo'
+import { conference } from '@/models/conference'
+import {assert} from '@/models/utils'
+import errorInfo from '@/stores/ErrorInfo'
 import {autorun} from 'mobx'
 import {getAudioOutputDevice, NodeGroup, NodeGroupForPlayback, PlayMode, setAudioOutputDevice} from './NodeGroup'
 

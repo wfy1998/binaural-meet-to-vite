@@ -1,9 +1,9 @@
 import Button from '@material-ui/core/Button'
 import DialogContent from '@material-ui/core/DialogContent'
-import {t} from '@models/locales'
-import {buttonStyle, dialogStyle} from '@components/utils'
-import errorInfo from '@stores/ErrorInfo'
-import map from '@stores/Map'
+import {t} from '@/models/locales'
+import {buttonStyle, dialogStyle} from '@/components/utils'
+import errorInfo from '@/stores/ErrorInfo'
+import map from '@/stores/Map'
 import React, { useEffect } from 'react'
 import {ErrorDialogFrame} from './ErrorDialog'
 

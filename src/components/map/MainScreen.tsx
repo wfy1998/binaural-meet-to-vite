@@ -1,4 +1,4 @@
-import {BMProps} from '@components/utils'
+import {BMProps} from '@/components/utils'
 import {makeStyles} from '@material-ui/core'
 import {useObserver} from 'mobx-react-lite'
 import React, {useEffect, useRef, useState} from 'react'

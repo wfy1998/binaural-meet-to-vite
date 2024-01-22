@@ -1,14 +1,14 @@
-import {BMProps} from '@components/utils'
-import {acceleratorText2El} from '@components/utils/formatter'
+import {BMProps} from '@/components/utils'
+import {acceleratorText2El} from '@/components/utils/formatter'
 import windowArrowUp from '@iconify/icons-fluent/window-arrow-up-24-regular'
 
 import {Icon} from '@iconify/react'
 import {makeStyles} from '@material-ui/styles'
-import { conference } from '@models/conference'
-import {useTranslation} from '@models/locales'
+import { conference } from '@/models/conference'
+import {useTranslation} from '@/models/locales'
 import {useObserver} from 'mobx-react-lite'
 import React from 'react'
-import {FabWithTooltip} from '@components/utils/FabEx'
+import {FabWithTooltip} from '@/components/utils/FabEx'
 import {ShareDialog} from './ShareDialog'
 
 

@@ -1,13 +1,13 @@
-import {Conference} from '@models/conference'
+import {Conference} from '@/models/conference'
 import {RemoteProducer} from './RtcConnection'
-import {isContentRtc} from '@models/ISharedContent'
-import {PARTICIPANT_SIZE} from '@models/Participant'
-import {participantsStore as participants} from '@stores/participants'
-import {LocalParticipant} from '@stores/participants/LocalParticipant'
-import contents from '@stores/sharedContents/SharedContents'
+import {isContentRtc} from '@/models/ISharedContent'
+import {PARTICIPANT_SIZE} from '@/models/Participant'
+import {participantsStore as participants} from '@/stores/participants'
+import {LocalParticipant} from '@/stores/participants/LocalParticipant'
+import contents from '@/stores/sharedContents/SharedContents'
 import {autorun, IReactionDisposer, makeObservable, observable} from 'mobx'
 import {RemoteObjectInfo, LocalObjectInfo} from './priorityTypes'
-import {priorityLog, PRIORITYLOG} from '@models/utils'
+import {priorityLog, PRIORITYLOG} from '@/models/utils'
 
 function getIdFromProducer(p: RemoteProducer){
   if (p.role === 'avatar') return p.peer.peer

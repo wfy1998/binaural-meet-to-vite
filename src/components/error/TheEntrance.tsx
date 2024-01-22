@@ -1,18 +1,18 @@
-import { BMProps, buttonStyle, dialogStyle, translateIconStyle } from "@components/utils";
-import usageEn from "@images/usage.en.png";
-import usageJa from "@images/usage.ja.png";
+import { BMProps, buttonStyle, dialogStyle, translateIconStyle } from "@/components/utils";
+import usageEn from "@/images/usage.en.png";
+import usageJa from "@/images/usage.ja.png";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import DialogContent from "@material-ui/core/DialogContent";
 import TextField from "@material-ui/core/TextField";
 import TranslateIcon from "@material-ui/icons/Translate";
-import { i18nSupportedLngs, useTranslation } from "@models/locales";
-import { urlParameters } from "@models/url";
-import { isPortrait, isSmartphone } from "@models/utils";
-import errorInfo from "@stores/ErrorInfo";
+import { i18nSupportedLngs, useTranslation } from "@/models/locales";
+import { urlParameters } from "@/models/url";
+import { isPortrait, isSmartphone } from "@/models/utils";
+import errorInfo from "@/stores/ErrorInfo";
 import React, { useState } from "react";
 import { ErrorDialogFrame } from "./ErrorDialog";
-import {tfDivStyle, tfIStyle, tfLStyle} from '@components/utils'
+import {tfDivStyle, tfIStyle, tfLStyle} from '@/components/utils'
 
 export const TheEntrance: React.FC<BMProps> = (props) => {
   const { participants } = props.stores;

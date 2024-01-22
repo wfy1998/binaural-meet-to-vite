@@ -1,8 +1,8 @@
 import {makeStyles} from '@material-ui/core/styles'
-import {t} from '@models/locales'
-import {assert} from '@models/utils'
+import {t} from '@/models/locales'
+import {assert} from '@/models/utils'
 import {getGDriveUrl, getInformationOfGDriveContent, getParamsFromUrl,
-  getStringFromParams, isGDrivePreviewScrollable} from '@stores/sharedContents/SharedContentCreator'
+  getStringFromParams, isGDrivePreviewScrollable} from '@/stores/sharedContents/SharedContentCreator'
 import _ from 'lodash'
 import {useObserver} from 'mobx-react-lite'
 import React, {useEffect, useRef} from 'react'

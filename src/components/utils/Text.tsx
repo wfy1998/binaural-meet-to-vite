@@ -1,4 +1,4 @@
-import { isSelfUrl } from '@models/utils'
+import { isSelfUrl } from '@/models/utils'
 
 export function makeLink(key:number, regResult: string[]){
   //console.log('reg:', regResult)

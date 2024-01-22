@@ -1,5 +1,5 @@
-import {manager as audioManager} from '@models/audio'
-import participants from '@stores/participants/Participants'
+import {manager as audioManager} from '@/models/audio'
+import participants from '@/stores/participants/Participants'
 import {autorun} from 'mobx'
 
 //  headphone or audio output device update

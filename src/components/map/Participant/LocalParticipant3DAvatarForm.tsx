@@ -1,16 +1,16 @@
-import { BMProps, dialogStyle, titleStyle } from '@components/utils'
+import { BMProps, dialogStyle, titleStyle } from '@/components/utils'
 import Button from '@material-ui/core/Button'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import Popover, { PopoverOrigin, PopoverReference } from '@material-ui/core/Popover'
-import {useTranslation} from '@models/locales'
+import {useTranslation} from '@/models/locales'
 import React, {useEffect} from 'react'
 import {VRM, VRMUtils} from '@pixiv/three-vrm'
 import * as THREE from 'three'
-import {GetPromiseGLTFLoader} from '@models/api/GLTF'
+import {GetPromiseGLTFLoader} from '@/models/api/GLTF'
 import {IReactionDisposer, autorun, makeObservable, observable} from 'mobx'
-import { participants } from '@stores/index'
-import {formLog} from '@models/utils'
+import { participants } from '@/stores/index'
+import {formLog} from '@/models/utils'
 
 export interface LocalParticipantFormProps extends BMProps{
   open: boolean

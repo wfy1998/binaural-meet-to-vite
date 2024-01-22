@@ -1,7 +1,7 @@
-import {PARTICIPANT_SIZE} from '@models/Participant'
-import {Pose3DAudio} from '@models/utils'
-import {mulV3, normV} from '@models/utils/coordinates'
-import errorInfo from '@stores/ErrorInfo'
+import {PARTICIPANT_SIZE} from '@/models/Participant'
+import {Pose3DAudio} from '@/models/utils'
+import {mulV3, normV} from '@/models/utils/coordinates'
+import errorInfo from '@/stores/ErrorInfo'
 import {ConfigurableParams, ConfigurableProp} from './StereoParameters'
 
 export function setAudioOutputDevice(audio: HTMLAudioElement, deviceId: string) {

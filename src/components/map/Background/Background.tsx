@@ -1,7 +1,7 @@
-import {MAP_SIZE} from '@components/Constants'
-import {MapProps} from '@components/utils'
+import {MAP_SIZE} from '@/components/Constants'
+import {MapProps} from '@/components/utils'
 import {makeStyles} from '@material-ui/core/styles'
-import {rgb2Color} from '@models/utils'
+import {rgb2Color} from '@/models/utils'
 import {Observer, useObserver} from 'mobx-react-lite'
 import React from 'react'
 const HALF = 0.5

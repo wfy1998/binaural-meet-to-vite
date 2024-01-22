@@ -1,4 +1,4 @@
-import {assert} from '@models/utils'
+import {assert} from '@/models/utils'
 import React from 'react'
 
 export function acceleratorText2El(text:string) {

@@ -1,15 +1,15 @@
 import Button from '@material-ui/core/Button'
 import Paper from '@material-ui/core/Paper'
 import Popper, { PopperProps } from '@material-ui/core/Popper'
-import { StreamStat, RtcTransportStatsGot } from '@models/conference/RtcTransportStatsGot'
+import { StreamStat, RtcTransportStatsGot } from '@/models/conference/RtcTransportStatsGot'
 import React from 'react'
 import {BMProps} from '../utils'
-import {conference} from '@models/conference'
+import {conference} from '@/models/conference'
 import { useObserver } from 'mobx-react-lite'
-import errorInfo from '@stores/ErrorInfo'
-import {useTranslation} from '@models/locales'
-import {ConnectionStat} from '@components/map/Participant/SignalQuality'
-import {messageLoads} from '@stores/MessageLoads'
+import errorInfo from '@/stores/ErrorInfo'
+import {useTranslation} from '@/models/locales'
+import {ConnectionStat} from '@/components/map/Participant/SignalQuality'
+import {messageLoads} from '@/stores/MessageLoads'
 
 declare const config:any             //  from ../../config.js included from index.html
 

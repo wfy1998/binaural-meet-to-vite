@@ -1,4 +1,4 @@
-import {BMProps} from '@components/utils'
+import {BMProps} from '@/components/utils'
 
 export type Step = 'menu' | 'record' | 'none'
 

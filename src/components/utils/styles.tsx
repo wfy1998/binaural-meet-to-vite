@@ -1,6 +1,6 @@
 
 import {makeStyles} from '@material-ui/core/styles'
-import {isSmartphone} from '@models/utils'
+import {isSmartphone} from '@/models/utils'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import Radio from '@material-ui/core/Radio'
 import radioButtonCheckedIcon from '@iconify/icons-ic/round-radio-button-checked'

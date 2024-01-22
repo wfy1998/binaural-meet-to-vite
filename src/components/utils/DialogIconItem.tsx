@@ -1,4 +1,4 @@
-import {acceleratorText2El} from '@components/utils/formatter'
+import {acceleratorText2El} from '@/components/utils/formatter'
 import {Tooltip} from '@material-ui/core'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemAvatar from '@material-ui/core/ListItemAvatar'

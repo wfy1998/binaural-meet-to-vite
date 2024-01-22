@@ -1,7 +1,7 @@
-import {BROADCAST_DISTANCE} from '@models/audio/NodeGroup'
-import {ConfigurableParams} from '@models/audio/StereoParameters'
-import {PARTICIPANT_SIZE} from '@models/Participant'
-import participants from '@stores/participants/Participants'
+import {BROADCAST_DISTANCE} from '@/models/audio/NodeGroup'
+import {ConfigurableParams} from '@/models/audio/StereoParameters'
+import {PARTICIPANT_SIZE} from '@/models/Participant'
+import participants from '@/stores/participants/Participants'
 import {action, autorun, computed, makeObservable, observable} from 'mobx'
 
 const PERCENT = 100

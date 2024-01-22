@@ -1,4 +1,4 @@
-import {MSTrack} from '@models/conference/RtcConnection'
+import {MSTrack} from '@/models/conference/RtcConnection'
 
 export class AudioMeter{
   context?: AudioContext

@@ -8,7 +8,7 @@ import {MSCreateTransportMessage, MSMessage, MSPeerMessage, MSConnectMessage, MS
   MSStreamingStartMessage,
   MSStreamingStopMessage} from './MediaMessages'
 import * as mediasoup from 'mediasoup-client';
-import {connLog} from '@models/utils'
+import {connLog} from '@/models/utils'
 import {RtcTransportStatsGot} from './RtcTransportStatsGot'
 import {setInterval} from 'timers';
 import {messageLoads} from '../../stores/MessageLoads'

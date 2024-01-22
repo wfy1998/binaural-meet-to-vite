@@ -1,5 +1,5 @@
 import {makeStyles} from '@material-ui/core/styles'
-import {assert} from '@models/utils'
+import {assert} from '@/models/utils'
 import React, {useEffect, useRef} from 'react'
 import {ContentProps} from './Content'
 

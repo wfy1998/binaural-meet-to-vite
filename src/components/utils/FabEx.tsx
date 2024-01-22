@@ -1,4 +1,4 @@
-import {FabColor, IconColor, MoreButton, moreButtonControl, MoreButtonMember} from '@components/utils/MoreButton'
+import {FabColor, IconColor, MoreButton, moreButtonControl, MoreButtonMember} from '@/components/utils/MoreButton'
 import {Tooltip} from '@material-ui/core'
 import Fab from '@material-ui/core/Fab'
 import {makeStyles} from '@material-ui/core/styles'

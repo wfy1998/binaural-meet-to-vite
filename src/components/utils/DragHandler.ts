@@ -1,4 +1,4 @@
-import {normV, subV2} from '@models/utils'
+import {normV, subV2} from '@/models/utils'
 import React, {useEffect, useRef} from 'react'
 
 function checkClass<ET extends Element>(el: Element, stop:ET, clsToFind: string):Element | null {

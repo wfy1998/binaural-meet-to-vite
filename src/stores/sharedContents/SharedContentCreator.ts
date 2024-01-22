@@ -1,17 +1,17 @@
-import {getProxiedUrl} from '@models/api/CORS'
-import GoogleDrive from '@models/api/GoogleDrive'
-import {getImageSize, uploadToGyazo} from '@models/api/Gyazo'
+import {getProxiedUrl} from '@/models/api/CORS'
+import GoogleDrive from '@/models/api/GoogleDrive'
+import {getImageSize, uploadToGyazo} from '@/models/api/Gyazo'
 import {ContentType, isContentWallpaper, ISharedContent, TEN_YEAR, TextMessages,
-   TIME_RESOLUTION_IN_MS} from '@models/ISharedContent'
-import {Pose2DMap} from '@models/utils'
-import { getMimeType } from '@models/utils'
-import {isSelfUrl} from '@models/utils'
-import {MapData} from '@stores/Map'
-import {defaultValue as mapObjectDefaultValue} from '@stores/MapObject'
+   TIME_RESOLUTION_IN_MS} from '@/models/ISharedContent'
+import {Pose2DMap} from '@/models/utils'
+import { getMimeType } from '@/models/utils'
+import {isSelfUrl} from '@/models/utils'
+import {MapData} from '@/stores/Map'
+import {defaultValue as mapObjectDefaultValue} from '@/stores/MapObject'
 import _ from 'lodash'
 import participants from '../participants/Participants'
 import sharedContents from './SharedContents'
-import {contentLog} from '@models/utils'
+import {contentLog} from '@/models/utils'
 
 
 export const defaultContent: ISharedContent = Object.assign({}, mapObjectDefaultValue, {

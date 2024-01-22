@@ -1,13 +1,13 @@
 import * as THREE from 'three'
-import {VRM, VRMSchema, VRMUtils} from '@pixiv/three-vrm'
+import {VRM, VRMSchema, VRMUtils} from '@/pixiv/three-vrm'
 import React from 'react'
-import { ParticipantBase, PARTICIPANT_SIZE, VRMRigs } from '@models/Participant'
+import { ParticipantBase, PARTICIPANT_SIZE, VRMRigs } from '@/models/Participant'
 import { autorun, IReactionDisposer } from 'mobx'
 import * as Kalidokit from 'kalidokit'
 import { throttle } from 'lodash'
 import Euler from 'kalidokit/dist/utils/euler'
-import {GetPromiseGLTFLoader} from '@models/api/GLTF'
-import { participants } from '@stores/index'
+import {GetPromiseGLTFLoader} from '@/models/api/GLTF'
+import { participants } from '@/stores/index'
 
 interface Member{
   clock: THREE.Clock

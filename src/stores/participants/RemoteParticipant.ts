@@ -1,5 +1,5 @@
-import { ISharedContent } from '@models/ISharedContent'
-import {RemoteInformation, RemoteParticipant as IRemoteParticipant} from '@models/Participant'
+import { ISharedContent } from '@/models/ISharedContent'
+import {RemoteInformation, RemoteParticipant as IRemoteParticipant} from '@/models/Participant'
 import {action, makeObservable, observable} from 'mobx'
 import {Store} from '../utils'
 import {ParticipantBase, TracksStore, TrackStates} from './ParticipantBase'

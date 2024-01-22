@@ -25,6 +25,7 @@
     "jsx": "react-jsx",
     "baseUrl": "src",
     "isolatedModules": true,
+    "useDefineForClassFields": true,
     "paths": {           // ・・・・追加
       "@/*": [           // ・・・・追加
         "./*"            // ・・・・追加
