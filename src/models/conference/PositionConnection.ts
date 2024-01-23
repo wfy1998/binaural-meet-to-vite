@@ -36,7 +36,7 @@ export class PositionConnection {
   }
   public connect(){
     if (settings.lpsUrl && settings.lpsId && conference && participants){
-      this.connectToWS(settings.lpsUrl, settings.lpsId, conference.room, conference.rtcTransports.peer, participants.local.information.name)
+      this.connectToWS(settings.lpsUrl, settings.lpsId, conference.room, conference.rtcTransports.peer, participants.local.localInformationValue.name)
     }
   }
   public connectToWS(url: string, id:string, room: string, peer: string, name:string){
@@ -73,8 +73,8 @@ export class PositionConnection {
           if (base.type === 'position'){
             const msg = base as MSPositionMessage
             participants.local.pose = {position: msg.position as [number, number], orientation: msg.orientation}
-            if (participants.local.information.avatar !== 'circle'){
-              participants.local.information.avatar = 'circle'
+            if (participants.local.localInformationValue.avatar !== 'circle'){
+              participants.local.localInformationValue.avatar = 'circle'
               participants.local.sendInformation()
             }
           }

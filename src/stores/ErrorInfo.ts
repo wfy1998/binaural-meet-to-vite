@@ -68,7 +68,7 @@ export class ErrorInfo {
   constructor() {
     makeObservable(this)
     if (urlParameters['testBot'] !== null) {
-      participants.local.information.name = 'testBot'
+      participants.local.localInformationValue.name = 'testBot'
       this.clear()
     }
     autorun(() => {
@@ -216,7 +216,7 @@ export class ErrorInfo {
     const chars = '01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijlkmnopqrstuvwxyz'
     const randChar = () =>  chars.substr(Math.floor(Math.random() * chars.length), 1)
     participants.local.information = defaultInformation
-    participants.local.information.name = `testBot ${randChar()}${randChar()}${randChar()}`
+    participants.local.localInformationValue.name = `testBot ${randChar()}${randChar()}${randChar()}`
     participants.local.sendInformation()
     participants.local.pose.position = center as [number, number]
 

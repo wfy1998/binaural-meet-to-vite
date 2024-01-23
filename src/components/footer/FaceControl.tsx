@@ -9,9 +9,9 @@ import React from 'react'
 export const FaceControl: React.FC<BMProps> = (props: BMProps) => {
   const local = props.stores.participants.local
   const faceSwitch = <Observer>{ () =>
-    <Switch checked={local.information.faceTrack} name="face" style={dialogStyle}
+    <Switch checked={local.localInformationValue.faceTrack} name="face" style={dialogStyle}
       onChange={event => {
-        local.information.faceTrack = !local.information.faceTrack
+        local.localInformationValue.faceTrack = !local.localInformationValue.faceTrack
         local.saveInformationToStorage(true)
         local.sendInformation()
       } } />
@@ -22,7 +22,7 @@ export const FaceControl: React.FC<BMProps> = (props: BMProps) => {
     <FormControlLabel
       control={faceSwitch}
       label={<span style={dialogStyle}>
-        {local.information.avatarSrc.slice(-4)==='.vrm' ? t('trackWholeBody') :  t('showTrackedFace')}
+        {local.localInformationValue.avatarSrc.slice(-4)==='.vrm' ? t('trackWholeBody') :  t('showTrackedFace')}
       </span>}/>
   </Container>
 }

@@ -16,17 +16,17 @@ import {tfDivStyle, tfIStyle, tfLStyle} from '@/components/utils'
 
 export const TheEntrance: React.FC<BMProps> = (props) => {
   const { participants } = props.stores;
-  const [name, setName] = useState(participants.local.information.name);
+  const [name, setName] = useState(participants.local.localInformationValue.name);
   const savedRoom = sessionStorage.getItem("room");
   const [room, setRoom] = useState(
     urlParameters.room ? urlParameters.room : savedRoom ? savedRoom : ""
   );
 
   const onClose = (save: boolean) => {
-    if (name.length !== 0 || participants.local.information.name.length !== 0){
-      if (save || participants.local.information.name.length === 0) {
-        if (name.length && participants.local.information.name !== name) {
-          participants.local.information.name = name
+    if (name.length !== 0 || participants.local.localInformationValue.name.length !== 0){
+      if (save || participants.local.localInformationValue.name.length === 0) {
+        if (name.length && participants.local.localInformationValue.name !== name) {
+          participants.local.localInformationValue.name = name
           participants.local.sendInformation()
           participants.local.saveInformationToStorage(true)
         }

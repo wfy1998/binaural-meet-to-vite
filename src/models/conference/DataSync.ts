@@ -54,7 +54,7 @@ export class DataSync{
   sendParticipantInfo(){
     if (!participants.local.informationToSend){ return }
     this.connection.sendMessage(MessageType.PARTICIPANT_INFO, {...participants.local.informationToSend})
-    let name = participants.local.information.name
+    let name = participants.local.localInformationValue.name
     while(name.slice(0,1) === '_'){ name = name.slice(1) }
   }
   sendAudioLevel(){
@@ -132,7 +132,7 @@ export class DataSync{
     const caller = participants.find(from)
     if (caller){
       chat.calledBy(caller)
-      if (participants.local.information.notifyCall){
+      if (participants.local.localInformationValue.notifyCall){
         notification(t('noCalled', {name: caller?.information.name}), {icon: './favicon.ico'})
       }
     }
@@ -232,14 +232,14 @@ export class DataSync{
       remote.pose.orientation = pose.orientation
       remote.pose.position = pose.position
       remote.physics.located = true
-      if (local.information.notifyNear || local.information.notifyTouch){
+      if (local.localInformationValue.notifyNear || local.localInformationValue.notifyTouch){
         const distance = normV(subV2(remote.pose.position, local.pose.position))
         const NEAR = PARTICIPANT_SIZE * 3
         const TOUCH = PARTICIPANT_SIZE
         if (remote.lastDistance > TOUCH &&  distance <= TOUCH
-          && local.information.notifyTouch){
+          && local.localInformationValue.notifyTouch){
           notification(t('noTouched',{name: remote.information.name}), {icon: './favicon.ico'})
-        }else if (remote.lastDistance > NEAR && distance < NEAR && local.information.notifyNear){
+        }else if (remote.lastDistance > NEAR && distance < NEAR && local.localInformationValue.notifyNear){
           notification(t('noNear', {name: remote.information.name}), {icon: './favicon.ico'})
         }
         remote.lastDistance = distance
@@ -284,7 +284,7 @@ export class DataSync{
     if (myself) {
       if (!participants.yarnPhones.has(from)){
         participants.yarnPhones.add(from)
-        if (participants.local.information.notifyYarn){
+        if (participants.local.localInformationValue.notifyYarn){
           const remote = participants.find(from)
           if (remote){
             notification(t('noYarn', {name: remote.information.name}), {icon: './favicon.ico'})

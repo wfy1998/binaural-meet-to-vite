@@ -60,7 +60,7 @@ export function inputChangeObservationStart(){
   }))
   disposes.push(autorun(() => {
     const did = participants.local.devicePreference.videoinput
-    const faceTrack = participants.local.information.faceTrack
+    const faceTrack = participants.local.localInformationValue.faceTrack
     if (isCameraMuted()) {
       stopMpTrack()
       stopFaceTrack()
@@ -71,7 +71,7 @@ export function inputChangeObservationStart(){
         if (track) { conference.removeLocalTrack(true, track) }
       }
     }else{
-      const isVrm = participants.local.information.avatarSrc.slice(-4) === '.vrm'
+      const isVrm = participants.local.localInformationValue.avatarSrc.slice(-4) === '.vrm'
       if (isVrm){
         stopFaceTrack()
         startMpTrack(!faceTrack)

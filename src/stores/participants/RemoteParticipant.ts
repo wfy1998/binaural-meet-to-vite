@@ -6,7 +6,7 @@ import {ParticipantBase, TracksStore, TrackStates} from './ParticipantBase'
 
 
 export class RemoteParticipant extends ParticipantBase {
-  informationRemote:RemoteInformation = {} as RemoteInformation
+  remoteInformationValue:RemoteInformation = {} as RemoteInformation
   informationReceived = false
   @observable.shallow tracks = new TracksStore()
   @observable trackStates = new TrackStates()
@@ -17,6 +17,13 @@ export class RemoteParticipant extends ParticipantBase {
   constructor(id:string) {
     console.log(`RemoteParticipant ${id} created`)
     super()
+    this.remoteInformationValue = {
+      name: '',
+      avatar: '',
+      avatarSrc: '',
+      color: [],
+      textColor: []
+  };
     makeObservable(this)
     this.id = id
   }

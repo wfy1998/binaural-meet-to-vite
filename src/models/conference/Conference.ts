@@ -103,7 +103,7 @@ export class Conference {
       }
 
       //  connect to peer
-      const peer = participants.local.information.name.substring(0, 4).replaceAll(' ','_').replaceAll(':','_')
+      const peer = participants.local.localInformationValue.name.substring(0, 4).replaceAll(' ','_').replaceAll(':','_')
       this.rtcTransports.connect(room, peer).then((peer)=>{
         connLog()('rtc connected.')
         //  register event handlers and join
