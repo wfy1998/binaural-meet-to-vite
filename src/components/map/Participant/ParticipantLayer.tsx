@@ -39,6 +39,14 @@ export const ParticipantLayer: React.FC<MapProps> = (props) => {
   const remotes = useObserver(() => {
     const rs = Array.from(store.remote.values()).filter(r => r.physics.located)
     const all:Participant[] = Array.from(rs)
+
+
+  // todo：handle error TS2345: Argument of type 'LocalParticipant' is not assignable to parameter of type 'Participant'.
+  // Type 'import("C:/study/binaural-meet/binaural-meet-to-vite/src/stores/participants/LocalParticipant").LocalParticipant' is not assignable to type 'import("C:/study/binaural-meet/binaural-meet-to-vite/src/models/Participant").LocalParticipant'.
+  // Types of property 'information' are incompatible.
+  //   Type 'RemoteInformation | LocalInformation' is not assignable to type 'LocalInformation'.
+  //     Type 'RemoteInformation' is missing the following properties from type 'LocalInformation': email, faceTrack, notifyCall, notifyTouch, and 2 more.
+
     // all.push(store.local)
     // all.sort((a,b) => a.pose.position[1] - b!.pose.position[1])
     // for(let i=0; i<all.length; ++i){
