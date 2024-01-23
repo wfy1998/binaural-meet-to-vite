@@ -2,7 +2,7 @@ import {App} from '@/components/App'
 import '@/models/audio'  // init audio manager (DO NOT delete)
 import {i18nInit} from '@/models/locales'
 import {urlParameters} from '@/models/url'
-import {resolveAtEnd} from '@/models/utils'
+import {connLog, resolveAtEnd} from '@/models/utils'
 import errorInfo from '@/stores/ErrorInfo'
 import '@/stores/index'  // init store (DO NOT delete)
 import contents from '@/stores/sharedContents/SharedContents'
@@ -24,7 +24,7 @@ function main() {
   /*  //  Show last log for beforeunload
     const logStr = localStorage.getItem('log')
     console.log(`logStr: ${logStr}`)  //  */
-
+  console.log('main')
   const startPromise = resolveAtEnd(onStart)()
   startPromise.then(resolveAtEnd(renderDOM))
   startPromise.then(resolveAtEnd(startConference))
@@ -32,6 +32,7 @@ function main() {
 
 function onStart() {
   //  console.debug('start')
+  console.log('start')
 }
 
 function renderDOM() {

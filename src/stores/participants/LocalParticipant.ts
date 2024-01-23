@@ -12,6 +12,9 @@ import {ParticipantBase, TracksStore} from './ParticipantBase'
 // config.js
 declare const config:any                  //  from ../../config.js included from index.html
 
+
+
+
 export interface MediaSettings{
   stream:{
     muteVideo: boolean,
@@ -31,7 +34,7 @@ interface PhysicsInfo{
 
 type UploaderPreference = 'gyazo' | 'gdrive'
 
-export class LocalParticipant extends ParticipantBase implements Store<ILocalParticipant> {
+export class LocalParticipant extends ParticipantBase{
   devicePreference = new DevicePreference()
   @observable.shallow tracks = new TracksStore()
   @observable useStereoAudio = false  //  will be override by url switch
@@ -43,7 +46,9 @@ export class LocalParticipant extends ParticipantBase implements Store<ILocalPar
   @observable remoteVideoLimit = config.remoteVideoLimit as number || -1
   @observable remoteAudioLimit = config.remoteAudioLimit as number || -1
 
-  information = this.information as LocalInformation
+  // information = this.information as LocalInformation
+  localInformationValue: LocalInformation;
+
   @observable.ref informationToSend:RemoteInformation|undefined
   @action setThirdPersonView(tpv: boolean) { this.thirdPersonView = tpv }
   @computed get trackStates():TrackStates {
@@ -58,9 +63,22 @@ export class LocalParticipant extends ParticipantBase implements Store<ILocalPar
   constructor() {
     super(true)
     this.informationToSend = undefined
+    this.localInformationValue = {
+      email: 'example@example.com',
+      faceTrack: true,
+      notifyCall: true,
+      notifyTouch: true,
+      notifyNear: true,
+      notifyYarn: true,
+      name: '',
+      avatar: '',
+      avatarSrc: '',
+      color: [],
+      textColor: []
+  };
     makeObservable(this)
     this.loadInformationFromStorage()
-    if (urlParameters.name) { this.information.name = urlParameters.name }
+    if (urlParameters.name) { this.localInformationValue.name = urlParameters.name }
     this.useStereoAudio = urlParameters.headphone !== null ? true : false
     //  console.debug('URL headphone', urlParameters.headphone)
     this.muteAudio = urlParameters.muteMic !== null ? true : false
@@ -72,24 +90,24 @@ export class LocalParticipant extends ParticipantBase implements Store<ILocalPar
     autorun(() => { //  image avatar
       const gravatar = 'https://www.gravatar.com/avatar/'
       const vrm = 'https://'
-      let src = this.information.avatarSrc
-      if ((!src || src.includes(gravatar, 0) || src.includes(vrm, 0)) && this.information.email){
-        const email = this.information.email.trim()
+      let src = this.localInformationValue.avatarSrc
+      if ((!src || src.includes(gravatar, 0) || src.includes(vrm, 0)) && this.localInformationValue.email){
+        const email = this.localInformationValue.email.trim()
         if (email.includes(vrm) && email.slice(-4) === '.vrm'){
           src = email
         }else{
-          const hash = md5(this.information.email.trim().toLowerCase())
+          const hash = md5(this.localInformationValue.email.trim().toLowerCase())
           src = `${gravatar}${hash}?d=404`
         }
       }
       if (src){
         if (src.slice(-4).toLowerCase()==='.vrm'){
-          this.information.avatarSrc = src
+          this.localInformationValue.avatarSrc = src
         }else{
           checkImageUrl(src).then((src)=>{
-            this.information.avatarSrc = src
+            this.localInformationValue.avatarSrc = src
           }).catch(()=>{
-            this.information.avatarSrc = ''
+            this.localInformationValue.avatarSrc = ''
           })
         }
       }
@@ -98,7 +116,7 @@ export class LocalParticipant extends ParticipantBase implements Store<ILocalPar
 
   //  send infomration to other participants
   @action sendInformation(){
-    const {email, ...info} = this.information
+    const {email, ...info} = this.localInformationValue
     this.informationToSend = info
   }
   //  save and load participant's name etc.

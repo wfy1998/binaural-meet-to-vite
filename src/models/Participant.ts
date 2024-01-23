@@ -122,7 +122,8 @@ export type SoundLocalizationBase = 'avatar' | 'user'
 
 export function getColorOfParticipant(information: BaseInformation) {
   let color = information.color
-  if (!color.length) {
+  console.log('getColorOfParticipant', information.color)
+  if (!information.color.length) {
     if (information.name.length){
       color = getRandomColorRGB(information.name)
     }else{

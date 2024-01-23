@@ -1,6 +1,10 @@
 import { defineConfig } from "vite";
-import reactRefresh from "@vitejs/plugin-react";
+import reactSupport from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
+import babel from '@rollup/plugin-babel'; // 确保 Vite 使用 Babel
+import viteTsconfigPaths from 'vite-tsconfig-paths'
+import reactRefresh from '@vitejs/plugin-react-refresh'
+
 
 const path = require("path");
 
@@ -17,6 +21,14 @@ export default defineConfig({
     outDir: "build",
   },
   plugins: [
+    reactSupport({
+      babel: {
+        parserOpts: {
+          plugins: ['decorators-legacy', 'classProperties']
+        }
+      }
+    }),
+    viteTsconfigPaths(),
     reactRefresh(),
     svgrPlugin({
       svgrOptions: {
@@ -24,5 +36,7 @@ export default defineConfig({
         // ...svgr options (https://react-svgr.com/docs/options/)
       },
     }),
+    // babel() // 确保 Vite 使用 Babel
   ],
+
 });

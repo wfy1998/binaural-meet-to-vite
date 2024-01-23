@@ -5,8 +5,8 @@ import {Store} from '../utils'
 import {ParticipantBase, TracksStore, TrackStates} from './ParticipantBase'
 
 
-export class RemoteParticipant extends ParticipantBase implements Store<IRemoteParticipant> {
-  information:RemoteInformation = this.information as RemoteInformation
+export class RemoteParticipant extends ParticipantBase {
+  informationRemote:RemoteInformation = {} as RemoteInformation
   informationReceived = false
   @observable.shallow tracks = new TracksStore()
   @observable trackStates = new TrackStates()
@@ -15,6 +15,7 @@ export class RemoteParticipant extends ParticipantBase implements Store<IRemoteP
   @observable.ref closedZone: ISharedContent | undefined = undefined
   lastDistance = 0
   constructor(id:string) {
+    console.log(`RemoteParticipant ${id} created`)
     super()
     makeObservable(this)
     this.id = id

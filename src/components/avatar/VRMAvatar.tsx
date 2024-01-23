@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import {VRM, VRMSchema, VRMUtils} from '@/pixiv/three-vrm'
+import {VRM, VRMSchema, VRMUtils} from '@pixiv/three-vrm'
 import React from 'react'
 import { ParticipantBase, PARTICIPANT_SIZE, VRMRigs } from '@/models/Participant'
 import { autorun, IReactionDisposer } from 'mobx'
