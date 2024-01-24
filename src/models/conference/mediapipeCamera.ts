@@ -8,9 +8,16 @@ import {dataRequestInterval} from '@/models/conference/DataConnection'
 // config.js
 declare const config:any                  //  from ../../config.js included from index.html
 
-let holistic = new Holistic({locateFile: (file) => {
-  return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
-}})
+// let holistic = new Holistic({locateFile: (file) => {
+//   return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
+// }})
+
+const holistic = new Holistic({
+  locateFile: (file) => {
+    return `https://cdn.jsdelivr.net/npm/@mediapipe/holistic/${file}`;
+  },
+});
+
 holistic.setOptions({
   modelComplexity: 1,
   smoothLandmarks: true,
@@ -19,9 +26,17 @@ holistic.setOptions({
   refineFaceLandmarks:true
 })
 
-let faceMesh = new FaceMesh({locateFile: (file) => {
-  return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
-}})
+// let faceMesh = new FaceMesh({locateFile: (file) => {
+//   return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
+// }})
+
+const faceMesh = new FaceMesh({
+  locateFile: (file) => {
+    return `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`;
+  },
+});
+
+
 faceMesh.setOptions({
   //enableFaceGeometry?: boolean;
   //selfieMode?: boolean;

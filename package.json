@@ -116,6 +116,7 @@
     "@types/three": "^0.141.0",
     "@vitejs/plugin-react": "^4.2.1",
     "import": "^0.0.6",
-    "react-app-rewired": "^2.1.8"
+    "react-app-rewired": "^2.1.8",
+    "vite-plugin-mediapipe": "^0.1.0"
   }
 }

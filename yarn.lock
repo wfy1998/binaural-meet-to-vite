@@ -859,9 +859,9 @@
   integrity sha512-Vc8cdjxS5+O2gnjWH9KncYpUCVXT0h714KlWAsyqJvJbIgUJBqpppbIx8yWcAzBDxm/5cYSuBI5p5ySIPxzcEg==
 
 "@mediapipe/holistic@^0.5.1657300018":
-  version "0.5.1657300018"
-  resolved "https://registry.yarnpkg.com/@mediapipe/holistic/-/holistic-0.5.1657300018.tgz#f03ba1e29246a1c64ffd9f3ec533f1357372bbd8"
-  integrity sha512-X+zoqSi0Hlg5s3t4QrhdfAr2Uc8sdCbck8O6uIDqHtLbMJzeP+OPabk1PcfhJcL7u+2a+Pv08aRPOqJxNACvVA==
+  version "0.5.1675471629"
+  resolved "https://registry.yarnpkg.com/@mediapipe/holistic/-/holistic-0.5.1675471629.tgz#f1127d43161ff27e8889d5d39aaea164f9730980"
+  integrity sha512-qY+cxtDeSOvVtevrLgnodiwXYaAtPi7dHZtNv/bUCGEjFicAOYtMmrZSqMmbPkTB2+4jLnPF1vgshkAqQRSYAw==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -4919,6 +4919,11 @@ vite-babel-plugin@^0.0.2:
     "@babel/runtime" "^7.12.5"
     "@rollup/plugin-babel" "^5.2.2"
     vite "^1.0.0-rc.9"
+
+vite-plugin-mediapipe@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vite-plugin-mediapipe/-/vite-plugin-mediapipe-0.1.0.tgz#67a03904c25b94ffb6ca4fb6c095f8c50dabff59"
+  integrity sha512-B0H6ZqQbzDizG93v0vk2X2SOEhrwavuHkhE2SMUoh2KnRk9+KhNtqaxyxWm7Wj63kcCUMnuCrFYB8aLxmkDwNA==
 
 vite-plugin-svgr@^4.2.0:
   version "4.2.0"
