@@ -148,7 +148,7 @@ export const Choose3DAvatar: React.FC<LocalParticipantFormProps> = (props: Local
           <Button variant="contained" style={{width:avatarSize[0], height:avatarSize[1], textTransform:'none'}}
             onClick={(ev)=>{
               const local = participants.local
-              local.localInformationValue.email=`${vrmUrlBase}${ctx.id}`
+              local.information.email=`${vrmUrlBase}${ctx.id}`
               close3D(ev, 'enter')
             }}>
             <img alt='loading' style={{

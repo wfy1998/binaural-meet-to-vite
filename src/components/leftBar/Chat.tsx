@@ -74,11 +74,11 @@ function sendChatMessage(text: string, sendTo: string, props: BMProps){
     const remote = props.stores.participants.remote.get(sendTo)
     if (remote){
       chat.addMessage(new ChatMessage(text, local.id, remote.information.name,
-        local.localInformationValue.avatarSrc, local.getColor(), Date.now(), 'private'))
+        local.information.avatarSrc, local.getColor(), Date.now(), 'private'))
     }
   }else{
-    chat.addMessage(new ChatMessage(text, local.id, local.localInformationValue.name,
-      local.localInformationValue.avatarSrc, local.getColor(), Date.now(), 'text'))
+    chat.addMessage(new ChatMessage(text, local.id, local.information.name,
+      local.information.avatarSrc, local.getColor(), Date.now(), 'text'))
   }
 }
 

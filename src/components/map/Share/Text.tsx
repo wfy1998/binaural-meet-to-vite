@@ -221,9 +221,9 @@ export const Text: React.FC<ContentProps> = (props:ContentProps) => {
     }
     if (last?.pid !== participants.localId) {
       member.messages.push({message:'', pid:participants.localId,
-        name:participants.local.localInformationValue.name,
-        color: participants.local.localInformationValue.color,
-        textColor: participants.local.localInformationValue.textColor,
+        name:participants.local.information.name,
+        color: participants.local.information.color,
+        textColor: participants.local.information.textColor,
         time:Date.now()})
     }
     if (!member.editing) {  //  Find the message to focus to edit, i.e. my last message.

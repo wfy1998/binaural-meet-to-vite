@@ -1,6 +1,6 @@
 import {MAP_SIZE} from '@/components/Constants'
 import {t} from '@/models/locales'
-import { defaultInformation } from '@/models/Participant'
+import { defaultLocalInformation } from '@/models/Participant'
 import {urlParameters} from '@/models/url'
 import {addV2, diffSet, mulV2} from '@/models/utils'
 import map from '@/stores/Map'
@@ -68,7 +68,7 @@ export class ErrorInfo {
   constructor() {
     makeObservable(this)
     if (urlParameters['testBot'] !== null) {
-      participants.local.localInformationValue.name = 'testBot'
+      participants.local.information.name = 'testBot'
       this.clear()
     }
     autorun(() => {
@@ -215,8 +215,8 @@ export class ErrorInfo {
     setInterval(draw, 1000 / 20)
     const chars = '01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijlkmnopqrstuvwxyz'
     const randChar = () =>  chars.substr(Math.floor(Math.random() * chars.length), 1)
-    participants.local.information = defaultInformation
-    participants.local.localInformationValue.name = `testBot ${randChar()}${randChar()}${randChar()}`
+    participants.local.information = defaultLocalInformation
+    participants.local.information.name = `testBot ${randChar()}${randChar()}${randChar()}`
     participants.local.sendInformation()
     participants.local.pose.position = center as [number, number]
 

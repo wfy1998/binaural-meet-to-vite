@@ -67,7 +67,7 @@ export interface LocalInformation extends BaseInformation{
   notifyNear: boolean
   notifyYarn: boolean
 }
-export const defaultInformation:LocalInformation = {
+export const defaultLocalInformation:LocalInformation = {
   name: '',
   email: '',
   avatar: 'frog',
@@ -122,7 +122,13 @@ export type SoundLocalizationBase = 'avatar' | 'user'
 
 export function getColorOfParticipant(information: BaseInformation) {
   let color = information.color
-  console.log('getColorOfParticipant', information.color)
+  console.log('getColorOfParticipant', information)
+  if (information.color) {
+    console.log("information : ", information.color.length);
+} else {
+    console.log('information or information.color is undefined');
+}
+
   if (!information.color.length) {
     if (information.name.length){
       color = getRandomColorRGB(information.name)

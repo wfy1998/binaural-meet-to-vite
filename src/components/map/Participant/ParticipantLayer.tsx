@@ -47,12 +47,12 @@ export const ParticipantLayer: React.FC<MapProps> = (props) => {
   //   Type 'RemoteInformation | LocalInformation' is not assignable to type 'LocalInformation'.
   //     Type 'RemoteInformation' is missing the following properties from type 'LocalInformation': email, faceTrack, notifyCall, notifyTouch, and 2 more.
 
-    // all.push(store.local)
-    // all.sort((a,b) => a.pose.position[1] - b!.pose.position[1])
-    // for(let i=0; i<all.length; ++i){
-    //   all[i].zIndex = i+1
-    // }
-    //rs.sort((a,b) => a.pose.position[1] - b!.pose.position[1])
+    all.push(store.local)
+    all.sort((a,b) => a.pose.position[1] - b!.pose.position[1])
+    for(let i=0; i<all.length; ++i){
+      all[i].zIndex = i+1
+    }
+    rs.sort((a,b) => a.pose.position[1] - b!.pose.position[1])
     return rs
   })
   const localId = useObserver(() => store.localId)

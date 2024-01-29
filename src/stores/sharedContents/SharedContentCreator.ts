@@ -54,9 +54,9 @@ class SharedContentImp implements ISharedContent {
 
 export function createContent() {
   const content = new SharedContentImp()
-  content.ownerName = participants.local.localInformationValue.name
-  content.color = participants.local.localInformationValue.color
-  content.textColor = participants.local.localInformationValue.textColor
+  content.ownerName = participants.local.information.name
+  content.color = participants.local.information.color
+  content.textColor = participants.local.information.textColor
   content.zorder = Date.now()
 
   return content
@@ -144,9 +144,9 @@ export function createContentOfText(message: string, map: MapData) {
   const textMessage = {
     message,
     pid: participants.localId,
-    name: participants.local.localInformationValue.name,
-    color: participants.local.localInformationValue.color,
-    textColor: participants.local.localInformationValue.textColor,
+    name: participants.local.information.name,
+    color: participants.local.information.color,
+    textColor: participants.local.information.textColor,
     time: Date.now(),
   }
   const texts: TextMessages = {messages:[textMessage], scroll:[0, 0]}

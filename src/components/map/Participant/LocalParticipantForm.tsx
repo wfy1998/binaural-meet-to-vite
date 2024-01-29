@@ -64,13 +64,13 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
   function clearAvatarSrc(ev: React.FormEvent) {
     ev.preventDefault()
     setFile(null)
-    local.localInformationValue.avatarSrc = ''
+    local.information.avatarSrc = ''
   }
   function uploadAvatarSrc(ev: React.FormEvent) {
     ev.preventDefault()
     if (file) {
       uploadToGyazo(file).then((url) => {
-        local.localInformationValue.avatarSrc = url
+        local.information.avatarSrc = url
       })
     }
   }
@@ -98,9 +98,9 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
         //  console.log('render color picker', rgb)
 
         return  <>
-          <TextField label={t('YourName')} multiline={false} value={local.localInformationValue.name} style={tfDivStyle}
+          <TextField label={t('YourName')} multiline={false} value={local.information.name} style={tfDivStyle}
             inputProps={{style: tfIStyle, autoFocus:true}} InputLabelProps={{style: tfLStyle}}
-            onChange={event => {local.localInformationValue.name = event.target.value}}
+            onChange={event => {local.information.name = event.target.value}}
             onKeyPress={onKeyPress} fullWidth={true}
           />
           <Box mt={3}>
@@ -115,7 +115,7 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
                 <SketchPicker color = {{r:rgb[0], g:rgb[1], b:rgb[2]}} disableAlpha
                   onChange={(color, event)=>{
                     event.preventDefault()
-                    local.localInformationValue.color = [color.rgb.r, color.rgb.g, color.rgb.b]
+                    local.information.color = [color.rgb.r, color.rgb.g, color.rgb.b]
                   }}
                   />
               </Popover>
@@ -128,12 +128,12 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
                 <SketchPicker color = {{r:textRgb[0], g:textRgb[1], b:textRgb[2]}}
                   onChange={(color, event)=>{
                     event.preventDefault()
-                    local.localInformationValue.textColor = [color.rgb.r, color.rgb.g, color.rgb.b]
+                    local.information.textColor = [color.rgb.r, color.rgb.g, color.rgb.b]
                   }}
                 />
               </Popover>
               <Button variant="contained" style={{marginLeft:15, ...buttonStyle}}
-                onClick={()=>{local.localInformationValue.color=[]; local.localInformationValue.textColor=[]}} >
+                onClick={()=>{local.information.color=[]; local.information.textColor=[]}} >
                 {t('lsAutoColor')}</Button>
             </Box>
           </Box>
@@ -144,8 +144,8 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
                 style={{display:'inline', lineHeight:'2em'}}>
                 <div style={{fontSize:12, marginTop:8}}>{t('lsImageFile')}
                 </div>
-                {local.localInformationValue.avatarSrc && !isVrm(local.localInformationValue.avatarSrc) ? <>
-                  <img src={local.localInformationValue.avatarSrc} style={{height:'1.5em', verticalAlign:'middle'}} alt="avatar"/>
+                {local.information.avatarSrc && !isVrm(local.information.avatarSrc) ? <>
+                  <img src={local.information.avatarSrc} style={{height:'1.5em', verticalAlign:'middle'}} alt="avatar"/>
                   <input style={inputStyle} type="submit" onClick={clearAvatarSrc} value="✕" /> &nbsp;
                 </> : undefined}
                 <input style={inputStyle} type="file" onChange={(ev) => {
@@ -156,10 +156,10 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
               </Box>
               <Box ml={2} style={{display:'flex', alignItems:'flex-end'}}>
                 <TextField label={t('lsEmail')} multiline={false}
-                  value={makeEmailDisp(local.localInformationValue.email)}
+                  value={makeEmailDisp(local.information.email)}
                   style={{...tfDivStyle, marginTop:8}}
                   inputProps={{style: tfIStyle, autoFocus:true}} InputLabelProps={{style: tfLStyle}}
-                  onChange={event => local.localInformationValue.email = event.target.value}
+                  onChange={event => local.information.email = event.target.value}
                   onKeyPress={onKeyPress} fullWidth={true}
                 />
                 <Button variant="contained" size="small"
@@ -173,17 +173,17 @@ export const LocalParticipantForm: React.FC<LocalParticipantFormProps> = (props:
           <Box mt={3}>
             <div style={{fontSize:12}}>{t('lsNotification')}</div>
             <Box mt={-1} ml={2}>
-            <CheckWithLabel checked={local.localInformationValue.notifyCall}
-              onChange={(ev)=>{local.localInformationValue.notifyCall = ev.target.checked}}
+            <CheckWithLabel checked={local.information.notifyCall}
+              onChange={(ev)=>{local.information.notifyCall = ev.target.checked}}
               label={t('lsNotifyCall')} />
-            <CheckWithLabel checked={local.localInformationValue.notifyTouch}
-              onChange={(ev)=>{local.localInformationValue.notifyTouch = ev.target.checked}}
+            <CheckWithLabel checked={local.information.notifyTouch}
+              onChange={(ev)=>{local.information.notifyTouch = ev.target.checked}}
               label={t('lsNotifyTouch')} />
-            <CheckWithLabel checked={local.localInformationValue.notifyNear}
-              onChange={(ev)=>{local.localInformationValue.notifyNear = ev.target.checked}}
+            <CheckWithLabel checked={local.information.notifyNear}
+              onChange={(ev)=>{local.information.notifyNear = ev.target.checked}}
               label={t('lsNotifyNear')} />
-            <CheckWithLabel checked={local.localInformationValue.notifyYarn}
-              onChange={(ev)=>{local.localInformationValue.notifyYarn = ev.target.checked}}
+            <CheckWithLabel checked={local.information.notifyYarn}
+              onChange={(ev)=>{local.information.notifyYarn = ev.target.checked}}
               label={t('lsNotifyYarn')} />
             </Box>
           </Box>

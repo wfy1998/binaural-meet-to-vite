@@ -37,15 +37,15 @@ function drawFace(width:number, height:number,
   ctx.lineWidth = 6
   ctx.lineCap = 'round'
   ctx.fillRect(0, 0, width, height)
-  if (participants.local.localInformationValue.avatarSrc && !imageEl){
+  if (participants.local.information.avatarSrc && !imageEl){
     imageEl = new Image()
     imageEl.onload = () => {
       imageLoaded = true
     }
     imageEl.crossOrigin = 'anonymous'
-    imageEl.src = participants.local.localInformationValue.avatarSrc
+    imageEl.src = participants.local.information.avatarSrc
   }
-  if (!participants.local.localInformationValue.avatarSrc && imageEl){
+  if (!participants.local.information.avatarSrc && imageEl){
     imageEl.remove()
     imageLoaded = false
     imageEl = undefined
@@ -53,7 +53,7 @@ function drawFace(width:number, height:number,
   if (imageLoaded && imageEl){
       ctx.drawImage(imageEl, 0, 0, imageEl.width, imageEl.height, 0,0, width, height)
   }else{
-    const nameArray = participants.local.localInformationValue.name.split(' ')
+    const nameArray = participants.local.information.name.split(' ')
     let initial = ''
     nameArray.forEach(s => initial += s ? s.substring(0,1) : '')
     initial = initial.substring(0,2)
